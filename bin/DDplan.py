@@ -253,7 +253,7 @@ def dm_steps(loDM, hiDM, obs, cohdm=0.0, numsub=0, numprocs=1,
         And if device is not None, use it as the PGPLOT device for plotting.
     """
     # Allowable DM stepsizes
-    allow_dDMs = [0.01, 0.02, 0.03, 0.05, 0.1, 0.2, 0.3, 0.5, 1.0,
+    allow_dDMs = [0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.03, 0.05, 0.1, 0.2, 0.3, 0.5, 1.0,
                   2.0, 3.0, 5.0, 10.0, 20.0, 30.0, 50.0, 100.0, 200.0, 300.0]
 
     # Allowable number of downsampling factors
