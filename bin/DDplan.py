@@ -153,11 +153,11 @@ class dedisp_method(object):
 
     def __str__(self):
         if (self.numsub):
-            return "%9.3f  %9.3f  %6.2f    %4d  %6.2f  %6d  %6d  %6d " % \
+            return "%11.4f   %11.4f   %8.4f   %8d   %8.4f   %7d    %8d   %8d" % \
                    (self.loDM, self.hiDM, self.dDM, self.downsamp, self.dsubDM,
                     self.numDMs, self.DMs_per_prepsub, self.numprepsub)
         else:
-            return "%9.3f  %9.3f  %6.2f    %4d  %6d" % \
+            return "%11.4f   %11.4f   %8.4f   %8d   %7d" % \
                    (self.loDM, self.hiDM, self.dDM, self.downsamp, self.numDMs)
         
 def choose_downsamps(blocklen):
@@ -412,9 +412,9 @@ def dm_steps(loDM, hiDM, obs, cohdm=0.0, numsub=0, numprocs=1,
         ppgplot.pgsci(11)
 
         if (numsub):
-            print("\n  Low DM    High DM     dDM  DownSamp  dsubDM   #DMs  DMs/call  calls  WorkFract")
+            print("\n     Low DM       High DM        dDM   DownSamp     dsubDM      #DMs    DMs/call      calls   WorkFract")
         else:
-            print("\n  Low DM    High DM     dDM  DownSamp   #DMs  WorkFract")
+            print("\n     Low DM       High DM        dDM   DownSamp      #DMs   WorkFract")
         for method, fract in zip(methods, work_fracts):
             print(method, "  %.4g" % fract)
             method.plot(fract)
